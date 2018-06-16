@@ -21,7 +21,7 @@ app.use(express.static("public"));
 mongoose.connect("mongoose://localhost/mongo-scrape");
  
 app.get("/scrape", function(req, res) {
-    axios.get("").then(function(reaponse) {
+    axios.get("https://news.ycombinator.com/").then(function(reaponse) {
         var $ = cheerio.load(response.data);
         $("article h2").each(function(i, element) {
             var result = {};
